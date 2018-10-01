@@ -183,6 +183,7 @@ public class ManterFilmesController {
 		try {
 			
 			if(!result.hasFieldErrors()) {
+				filme2.setGenero(gService.buscarGenero(filme2.getGenero().getId()));
 				fService.editarFilme(filme);
 
 				model.addAttribute("filme", filme);
